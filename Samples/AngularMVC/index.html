@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple MVC: AngularJS</title>
+	<script src="../../jScripts/angular_js_1.4.6.js"></script>
+</head>
+<body ng-app="MvcApp">
+<div ng-controller="MvcController">
+<h2>
+	Welcome {{objHello.title}}, to the World of AngularJS!!
+</h2>
+</div>
+<script type="text/javascript">
+	angular.module( 'MvcApp', [])
+		.controller( 'MvcController', function( $scope ) {
+			$scope.objHello = {};
+			$scope.objHello.title = 'MirzaShakir Baig';
+		});
+</script>
+</body>
+</html>

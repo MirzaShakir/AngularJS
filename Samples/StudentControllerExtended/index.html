@@ -1,0 +1,111 @@
+<html>
+<head>
+	<title>Student controller Extended version: AngularJS</title>
+	<script src="../../jScripts/angular_js_1.4.6.js"></script>
+	<link rel="stylesheet" href="../../Styles/common.min.css" >
+</head>
+<body>
+<div ng-app="studentApp" ng-controller="studentController">
+	<h3>Student details</h3>
+	<table border="0" class="cls-common">
+		<tr>
+			<td>Enter first name</td>
+			<td><input type="text" ng-model="student.strFirstName"></td>
+		</tr>
+		<tr>
+			<td>Enter Last name</td>
+			<td><input type="text" ng-model="student.strLastName"></td>
+		</tr>
+		<tr>
+			<td>Enter fees</td>
+			<td><input type="text" ng-model="student.strFees"></td>
+		</tr>
+		<tr>
+			<td>Enter Subject</td>
+			<td><input type="text" ng-model="strSubjectName"></td>
+		</tr>
+	</table>
+	<br/>
+	<hr />
+	<br/>
+
+	<table border="0" class="cls-common">
+		<tr>
+			<td>Full name (Upper Case)</td>
+			<td><span> {{student.getFullName() | uppercase}} </span></td>
+		</tr>
+		<tr>
+			<td>Full name (Lower Case)</td>
+			<td><span> {{student.getFullName() | lowercase}} </span></td>
+		</tr>
+		<tr>
+			<td>Fees</td>
+			<td><span> {{student.strFees | currency:'Rs. '}} </span></td>
+		</tr>
+		<tr>
+			<td>Subjects</td>
+			<td>
+				<table border="0" class="cls-common">
+					<tr>
+						<td>Subject</td>
+						<td>Marks</td>
+					</tr>
+					<tr ng-repeat="arrSubject in student.arrSubjects | filter: strSubjectName">
+						<td>{{arrSubject.name}}</td>
+						<td>{{arrSubject.marks}}</td>
+					</tr>
+				</table>
+				<!--<ul>
+					<li ng-repeat="arrSubject in student.arrSubjects | filter: strSubjectName">
+						{{arrSubject.name}} : {{arrSubject.marks}}
+					</li>
+				</ul>-->
+			</td>
+		</tr>
+		<tr>
+			<td>Totals</td>
+			<td><span> {{student.getTotalMarks()}} </span></td>
+		</tr>
+	</table>
+</div>
+<script type="text/javascript">
+	angular.module( 'studentApp', [])
+		.controller( 'studentController', function($scope) {
+			$scope.student = {
+				strFirstName:	"MirzaShakir",
+				strLastName:	"Baig",
+				strFees:		41591,
+				arrSubjects:	[
+					{name: 'C Language', marks: '58'},
+					{name: 'C++ Oops', marks: '47'},
+					{name: 'Computer Networks', marks: '57'},
+					{name: 'Communication Networks', marks: '51'},
+					{name: 'Operating Systems', marks: '54'},
+					{name: 'Java Basics', marks: '50'},
+					{name: 'Advance Java', marks: '55'},
+					{name: 'Visual Studio', marks: '49'}
+				],
+
+				getFullName: function() {
+					var objStudent;
+					objStudent = $scope.student;
+					return objStudent.strFirstName + '  ' + objStudent.strLastName;
+				},
+
+				getTotalMarks: function() {
+					var ObjMarks, intTotals = 0;
+					objMarks = $scope.student.arrSubjects;
+					for(var i=0; i < objMarks.length; i++) {
+						intTotals += parseInt( objMarks[i].marks );
+					}
+					return intTotals;
+				}
+			};
+		});
+</script>
+</body>
+</html>
+<!--
+Always use function with brackets.
+if you just declare function like {{student.fullName}}, it will display the code written in that function on HTML side
+-->

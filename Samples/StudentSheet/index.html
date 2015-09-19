@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student mark sheet: AngularJS</title>
+	<script src="../../jScripts/angular_js_1.4.6.js"></script>
+</head>
+<body>
+<div ng-app="" ng-init="objStudent={rollno:'10130', name:'MirzaShakir Baig'}; arrMarks=[96,69,78,87,76,98]">
+
+	<h3>Hello Mr. {{objStundent.name}}</h3>
+
+	<h5>Marks details</h5>
+	<hr/>
+	<p> Roll No: {{objStudent.rollno}}</p>
+	<h6> Marks </h6>
+	<p> Computer: {{arrMarks[0]}}</p>
+	<p> Java: {{arrMarks[1]}}</p>
+	<p> PHP: {{arrMarks[2]}}</p>
+	<p> C#.Net: {{arrMarks[3]}}</p>
+	<p> AngularJS: {{arrMarks[4]}}</p>
+	<p> jQuery: {{arrMarks[5]}}</p>
+</div>
+</body>
+</html>

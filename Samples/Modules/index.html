@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>Student controller Using Modules: AngularJS</title>
+	<script src="../../jScripts/angular_js_1.4.6.js"></script>
+	<link rel="stylesheet" href="../../Styles/common.min.css" >
+	<script src="moduleApp.js"></script>
+	<script src="moduleController.js"></script>
+</head>
+<body>
+<div ng-app="moduleApp" ng-controller="moduleController">
+	<h3>Module Controllers explained</h3>
+	<table border="0" class="cls-common">
+		<thead>
+			<tr>
+				<th colspan="2">Country basic details</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>Country</td>
+			<td>{{objCountry.name}}</td>
+		</tr>
+		<tr>
+			<td>Code</td>
+			<td>{{objCountry.code}}</td>
+		</tr>
+		<tr>
+			<td>Currency</td>
+			<td>{{objCountry.currency}}</td>
+		</tr>
+		<tr>
+			<td>{{objCountry.currency}} vs USD</td>
+			<td>{{objCountry.dollarRate}}</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>
+<!--
+Always use function with brackets.
+if you just declare function like {{student.fullName}}, it will display the code written in that function on HTML side
+-->

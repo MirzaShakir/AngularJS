@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Student controller Extended version: AngularJS</title>
+	<script src="../../jScripts/angular_js_1.4.6.js"></script>
+	<link rel="stylesheet" href="../../Styles/common.min.css" >
+</head>
+<body>
+<div ng-app="">
+	<h3>NG-Directives</h3>
+	<table border="0" class="cls-common">
+		<tr>
+			<td><label><input type="checkbox" ng-model="toggleMeDisable"> Disable Button</label></td>
+			<td><button ng-disabled="toggleMeDisable">Click me!!</button></td>
+		</tr>
+		<tr>
+			<td><label><input type="checkbox" ng-model="showHideMe"> Show/Hide Button</label></td>
+			<td><button ng-show="showHideMe">Click me!!</button></td>
+		</tr>
+		<tr>
+			<td><label>Total Clicks:  {{intClickCounter}}</label></td>
+			<td><button ng-click="intClickCounter = intClickCounter + 1">Click me!!</button></td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>
+<!--
+Always use function with brackets.
+if you just declare function like {{student.fullName}}, it will display the code written in that function on HTML side
+-->

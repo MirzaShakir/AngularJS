@@ -1,0 +1,16 @@
+/*
+ * Common css for Everythings
+ *
+ */
+table.cls-common, table.cls-common tr, table.cls-common td {
+	border: 1px solid darkgrey;
+	border-collapse: collapse;
+	padding: 5px;
+}
+
+table.cls-common tr:nth-child(odd) {
+	background-color: #f2f2f2;
+}
+table.cls-common tr:nth-child(even) {
+	background-color: #ffffff;
+}
