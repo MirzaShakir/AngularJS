@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>Ajax: AngularJS</title>
+	<script src="../../jScripts/angular_1.4.6/angular.js"></script>
+	<link rel="stylesheet" href="../../Styles/common.min.css">
+</head>
+<body>
+<div ng-app="moduleApp" ng-controller="moduleController">
+	<h3>Example of Ajax calls using angular js function</h3>
+	<hr/>
+	<table border="0" class="cls-common">
+		<tr>
+			<td>Roll No</td>
+			<td>Name of Student</td>
+			<td>Percentage</td>
+		</tr>
+		<tr ng-repeat="objStudent in objStudents">
+			<td>{{objStudent.roll_number}}</td>
+			<td>{{objStudent.name}}</td>
+			<td>{{objStudent.percentage}} %</td>
+		</tr>
+	</table>
+</div>
+<script type="text/javascript">
+	angular.module( 'moduleApp', [])
+		.controller( 'moduleController', function( $scope, $http ) {
+			var strLoadUrl = 'all_students.txt';
+
+			$http.get( strLoadUrl ).success( function( objResponse ) {
+				$scope.objStudents = objResponse;
+			});
+		});
+</script>
+</body>
+</html>

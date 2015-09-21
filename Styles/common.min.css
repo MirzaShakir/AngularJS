@@ -14,3 +14,7 @@ table.cls-common tr:nth-child(odd) {
 table.cls-common tr:nth-child(even) {
 	background-color: #ffffff;
 }
+
+.spn-warning-red {
+	color: red;
+}

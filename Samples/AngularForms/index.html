@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title>Angular Forms: AngularJS</title>
+	<script src="../../jScripts/angular_1.4.6/angular.js"></script>
+	<link rel="stylesheet" href="../../Styles/common.min.css">
+	<script src="moduleApp.js"></script>
+	<script src="moduleController.js"></script>
+</head>
+<body>
+<div ng-app="moduleApp" ng-controller="moduleController">
+	<h3>Form submission using Angular Forms</h3>
+	<hr/>
+	<form name="frmStudent" novalidate>
+		<table border="0" class="cls-common">
+			<tr>
+				<td>Enter First name</td>
+				<td>:</td>
+				<td>
+					<input type="text" name="first_name" ng-model="objStudent.strFirstName" required>
+					<span class="spn-warning-red" ng-show="frmStudent.first_name.$dirty && frmStudent.first_name.$invalid">
+						<span ng-show="frmStudent.first_name.$error.required">Student first name is required</span>
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td>Enter Middle name</td>
+				<td>:</td>
+				<td>
+					<input type="text" name="middle_name" ng-model="objStudent.strMiddleName" required>
+					<span class="spn-warning-red" ng-show="frmStudent.middle_name.$dirty && frmStudent.middle_name.$invalid">
+						<span ng-show="frmStudent.middle_name.$error.required">Student middle name is required</span>
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td>Enter Last name</td>
+				<td>:</td>
+				<td>
+					<input type="text" name="last_name" ng-model="objStudent.strLastName" required>
+					<span class="spn-warning-red" ng-show="frmStudent.last_name.$dirty && frmStudent.last_name.$invalid">
+						<span ng-show="frmStudent.last_name.$error.required">Student last name is required</span>
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td><button ng-click="reset()">Reset All</button></td>
+				<td></td>
+				<td>
+					<button ng-disabled="frmStudent.first_name.$dirty &&
+					frmStudent.first_name.$invalid" ng-click="submit">Submit</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+</body>
+</html>
+<!--
+Always use function with brackets.
+if you just declare function like {{objStudent.fullName}}, it will display the code written in that function on HTML side
+-->

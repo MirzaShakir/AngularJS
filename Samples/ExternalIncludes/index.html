@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>External includes: AngularJS</title>
+	<script src="../../jScripts/angular_1.4.6/angular.js"></script>
+	<link rel="stylesheet" href="../../Styles/common.min.css">
+</head>
+<body>
+<div ng-app="moduleApp" ng-controller="moduleController">
+	<h3>Loading information from external forms</h3>
+	<hr/>
+	<table border="0" class="cls-common">
+		<tr ng-include="'firstname.html'"></tr>
+		<tr ng-include="'lastname.html'"></tr>
+	</table>
+</div>
+<script type="text/javascript">
+	angular.module( 'moduleApp', [])
+		.controller( 'moduleController', function($scope) {
+			$scope.objStudent = {
+				firstname: 'MirzaShakir',
+				lastname: 'Baig'
+			};
+		});
+</script>
+</body>
+</html>
